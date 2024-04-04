@@ -11,14 +11,6 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
-import {
-  Menubar,
-  MenubarContent,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-} from '@/components/ui/menubar';
-
 const components: { title: string; href: string }[] = [
   {
     title: 'FAQ',
@@ -44,6 +36,7 @@ const components: { title: string; href: string }[] = [
 
 export function Header() {
   const [screenWidth, setScreenWidth] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -61,60 +54,62 @@ export function Header() {
   }, []);
 
   return (
-    <div
-      className="z-10 flex sticky top-0 py-3 max-w-6xl w-full items-center justify-between 
-      font-mono text-sm lg:flex sm:container bg-black md:bg-green-500 lg:bg-blue-500
-      
-    "
-      /*sm:bg-red-500 md:bg-blue-400 lg:bg-yellow-500 xl:bg-green-400  */
-    >
-      <a
-        className="flex items-center space-x-3 rtl:space-x-reverse ml-6 md:ml-0"
-        href="https://https://medroster.com/"
-      >
-        <Image
-          src="/medrosterlogo.png"
-          alt="Medroster"
-          height={34}
-          width={225}
-        />
-      </a>
+    <div className="z-10 flex flex-col lg:flex-row sticky top-0 py-3 max-w-6xl w-full lg:justify-between font-mono text-sm lg:flex sm:container bg-black lg:bg-transparent">
+      <div className="flex items-center justify-between w-full lg:w-auto lg:ml-auto pr-5">
+        <a
+          className="flex items-center space-x-3 rtl:space-x-reverse ml-6 md:ml-0"
+          href="https://medroster.com/"
+        >
+          <Image
+            src="/medrosterlogo.png"
+            alt="Medroster"
+            height={34}
+            width={225}
+          />
+        </a>
+
+        {/* Menu icon for smaller displays */}
+        <div
+          className="flex lg:hidden items-center border hover:cursor-pointer 
+        text-foreground p-1 border-foreground rounded-md w-12 justify-center 
+        "
+        >
+          <Menu onClick={() => setMenuOpen(!menuOpen)} />
+        </div>
+      </div>
 
       {/* Navigation menu for smaller displays */}
-
-      <Menubar className="flex lg:hidden mr-6 md:mr-0">
-        {' '}
-        <span className="text-white text-xs lg:hidden">{screenWidth}px</span>
-        <MenubarMenu>
-          <MenubarTrigger>
-            <Menu />
-          </MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>FAQ</MenubarItem>
-            <MenubarItem>Terms</MenubarItem>
-            <MenubarItem>Contact</MenubarItem>
-            <MenubarItem>Partners</MenubarItem>
-            <MenubarItem>Login</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
-      </Menubar>
+      <div className="flex lg:hidden ml-8">
+        {menuOpen && (
+          <div className="bg-black w-full">
+            <div className="flex flex-col">
+              {components.map((component, index) => (
+                <a
+                  href={component.href}
+                  key={index}
+                  className="text-white py-2 hover:text-primary text-lg"
+                >
+                  {component.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Navigation menu for wider displays */}
       <NavigationMenu className="hidden lg:flex">
         <NavigationMenuList>
-          <NavigationMenuItem>
-            {' '}
-            <span className="text-white text-xs ">{screenWidth}px</span>
-            {components.map((component, index) => (
+          {components.map((component, index) => (
+            <NavigationMenuItem key={index}>
               <NavigationMenuLink
                 className={navigationMenuTriggerStyle()}
                 href={component.href}
-                key={index}
               >
                 {component.title}
               </NavigationMenuLink>
-            ))}
-          </NavigationMenuItem>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
     </div>

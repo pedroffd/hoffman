@@ -8,7 +8,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen min-w-screen mx-auto">
       <Header />
       <div className="flex-grow relative">
-        <div className="absolute inset-0 bottom-12 -top-12 md:-bottom-10">
+        <div className="absolute inset-0 bottom-12 -top-12 md:-bottom-10 lg:-top-20 lg:-bottom-44">
           <Image
             src="/images/jumbotron.jpg"
             alt="Medroster Landing"
@@ -20,11 +20,11 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10">
+        <div className="relative z-10 xl:container">
           <Hero />
         </div>
       </div>
-      <div className="relative -top-12 md:top-5">
+      <div className="relative -top-12 md:top-5 lg:top-40">
         <CTA />
       </div>
     </main>
