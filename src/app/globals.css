@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Background color: White */
+    --background: 0 0% 100%;
+    /* Foreground color: Light gray */
+    --foreground: 292.2 0% 71.5%;
+
+    /* Card background color: White */
+    --card: 0 0% 100%;
+    /* Card foreground color: Light gray */
+    --card-foreground: 222.2 84% 4.9%;
+
+    /* Popover background color: White */
+    --popover: 0 0% 100%;
+    /* Popover foreground color: Light gray */
+    --popover-foreground: 222.2 84% 4.9%;
+   /* #EB4D5D
+    /* Primary color: Red */
+    --primary: 350.88 67.76% 57.46%;
+    /* Primary foreground color: Light red */
+    --primary-foreground: 358 68% 60%;
+
+    /* Secondary color: Light blue */
+    --secondary: 210 40% 96.1%;
+    /* Secondary foreground color: Dark gray */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Muted color: Light blue */
+    --muted: 210 40% 96.1%;
+    /* Muted foreground color: Moderate pink */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+      /*#31363C - hex value
+    /* Secondary color: Light light gray */
+    --accent: 210.66 11.94% 21.38%;
+
+    /*#23272B hex value
+    /* Secondary foreground color: Dark gray */
+    --accent-foreground: 217.62 13.88% 15.29%;
+
+
+    /* Destructive color: Light pink */
+    --destructive: 0 84.2% 60.2%;
+    /* Destructive foreground color: Light blue */
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border color: Light gray */
+    --border: 214.3 31.8% 91.4%;
+    /* Input color: Light gray */
+    --input: 214.3 31.8% 91.4%;
+    /* Ring color: Light gray */
+    --ring: 222.2 84% 4.9%;
+
+    /* Radius value */
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode */
+  .dark {
+    /* Background color: Light gray */
+    --background: 222.2 84% 4.9%;
+    /* Foreground color: Light blue */
+    --foreground: 210 40% 98%;
+
+    /* Card background color: Light gray */
+    --card: 222.2 84% 4.9%;
+    /* Card foreground color: Light blue */
+    --card-foreground: 210 40% 98%;
+
+    /* Popover background color: Light gray */
+    --popover: 222.2 84% 4.9%;
+    /* Popover foreground color: Light blue */
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary color: Light blue */
+    --primary: 210 40% 98%;
+    /* Primary foreground color: Dark gray */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* Secondary color: Dark blue */
+    --secondary: 217.2 32.6% 17.5%;
+    /* Secondary foreground color: Light blue */
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted color: Dark blue */
+    --muted: 217.2 32.6% 17.5%;
+    /* Muted foreground color: Moderate pink */
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* Accent color: Dark blue */
+    --accent: 217.2 32.6% 17.5%;
+    /* Accent foreground color: Light blue */
+    --accent-foreground: 210 40% 98%;
+
+    /* Destructive color: Dark pink */
+    --destructive: 0 62.8% 30.6%;
+    /* Destructive foreground color: Light blue */
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border color: Dark blue */
+    --border: 217.2 32.6% 17.5%;
+    /* Input color: Dark blue */
+    --input: 217.2 32.6% 17.5%;
+    /* Ring color: Light purple */
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
