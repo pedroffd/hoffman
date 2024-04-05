@@ -54,10 +54,13 @@ export function Header() {
   }, []);
 
   return (
-    <div className="z-10 flex flex-col lg:flex-row sticky top-0 py-3 max-w-6xl w-full lg:justify-between font-mono text-sm lg:flex sm:container bg-black lg:bg-transparent">
-      <div className="flex items-center justify-between w-full lg:w-auto lg:ml-auto pr-5">
+    <div
+      className="z-10 flex flex-col lg:flex-row sticky top-0 py-3 max-w-5xl w-full 
+    lg:justify-between font-mono text-sm lg:flex container bg-black lg:bg-transparent"
+    >
+      <div className="flex items-center justify-between w-full lg:ml-auto">
         <a
-          className="flex items-center space-x-3 rtl:space-x-reverse ml-6 md:ml-0"
+          className="flex items-center space-x-3 rtl:space-x-reverse md:ml-0"
           href="https://medroster.com/"
         >
           <Image
@@ -74,12 +77,13 @@ export function Header() {
         text-foreground p-1 border-foreground rounded-md w-12 justify-center 
         "
         >
+          {/*     {screenWidth} */}
           <Menu onClick={() => setMenuOpen(!menuOpen)} />
         </div>
       </div>
 
       {/* Navigation menu for smaller displays */}
-      <div className="flex lg:hidden ml-8">
+      <div className="flex lg:hidden">
         {menuOpen && (
           <div className="bg-black w-full">
             <div className="flex flex-col">

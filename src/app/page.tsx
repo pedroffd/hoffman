@@ -19,7 +19,10 @@ export default function Home() {
         />
       </div>
       <div className="flex-grow relative">
-        <div className="relative z-10 xl:container">{/*    <Hero /> */}</div>
+        <div className="relative z-10 xl:container">
+          {' '}
+          <Hero />
+        </div>
       </div>
       <div className="relative -top-11 md:top-5 lg:top-40">
         <CTA />
