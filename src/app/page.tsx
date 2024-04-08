@@ -3,7 +3,7 @@ import { Header } from './components/header-menu';
 import Hero from './components/hero';
 import CTA from './components/cta';
 import HowItWorks from './components/how-it-works';
-import AlreadytUser from './components/already-user';
+import AlreadyUser from './components/already-user';
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
       <div className="relative z-10 top-16 sm:top-36 md:top-96 lg:top-44">
         <CTA />
         <HowItWorks />
-        <AlreadytUser />
+        <AlreadyUser />
       </div>
     </main>
   );

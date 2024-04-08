@@ -11,7 +11,7 @@
 
     /* Card background color: White */
     --card: 0 0% 100%;
-    /* Card foreground color: Light gray */
+    /* Card foreground color: dark gray */
     --card-foreground: 222.2 84% 4.9%;
 
     /* Popover background color: White */
@@ -43,8 +43,11 @@
     --accent-foreground: 217.62 13.88% 15.29%;
 
 
-    /* Destructive color: Light pink */
-    --destructive: 0 84.2% 60.2%;
+
+
+      /*#bfbfbf5c */
+      --destructive: 0 0% 75%;
+  
     /* Destructive foreground color: Light blue */
     --destructive-foreground: 210 40% 98%;
 
