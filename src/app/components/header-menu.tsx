@@ -35,87 +35,97 @@ const components: { title: string; href: string }[] = [
 ];
 
 export function Header() {
-  const [screenWidth, setScreenWidth] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    function handleResize() {
-      setScreenWidth(window.innerWidth);
+    function handleScroll() {
+      const position = window.scrollY;
+      setScrollPosition(position);
     }
 
-    // Initial size on mount
-    handleResize();
+    // Initial position on mount
+    handleScroll();
 
     // Event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
 
     // Cleanup the event listener
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isBlackBackground = scrollPosition > 50;
 
   return (
     <div
-      className="z-10 flex flex-col lg:flex-row sticky top-0 py-3 max-w-5xl w-full 
-    lg:justify-between font-mono text-sm lg:flex container bg-black lg:bg-transparent"
+      className={`header z-20 sticky top-0 ${isBlackBackground ? 'bg-black' : 'bg-black lg:bg-transparent'}`}
     >
-      <div className="flex items-center justify-between w-full lg:ml-auto">
-        <a
-          className="flex items-center space-x-3 rtl:space-x-reverse md:ml-0"
-          href="https://medroster.com/"
-        >
-          <Image
-            src="/medrosterlogo.png"
-            alt="Medroster"
-            height={34}
-            width={225}
-          />
-        </a>
+      <div
+        className="container flex flex-col lg:flex-row py-3 max-w-5xl w-full 
+    lg:justify-between font-mono text-sm lg:flex"
+      >
+        <div className="flex items-center justify-between w-full lg:ml-auto">
+          <a
+            className="flex items-center space-x-3 rtl:space-x-reverse md:ml-0"
+            href="https://medroster.com/"
+          >
+            <Image
+              src="/medrosterlogo.png"
+              alt="Medroster"
+              height={34}
+              width={225}
+            />
+          </a>
 
-        {/* Menu icon for smaller displays */}
-        <div
-          className="flex lg:hidden items-center border hover:cursor-pointer 
+          {/* Menu icon for smaller displays */}
+          <div
+            className="flex lg:hidden items-center border hover:cursor-pointer 
         text-foreground p-1 border-foreground rounded-md w-12 justify-center 
         "
-        >
-          {/*     {screenWidth} */}
-          <Menu onClick={() => setMenuOpen(!menuOpen)} />
+          >
+            {/*     {screenWidth} */}
+            <Menu onClick={() => setMenuOpen(!menuOpen)} />
+          </div>
         </div>
-      </div>
 
-      {/* Navigation menu for smaller displays */}
-      <div className="flex lg:hidden">
-        {menuOpen && (
-          <div className="bg-black w-full">
-            <div className="flex flex-col">
-              {components.map((component, index) => (
-                <a
+        {/* Navigation menu for smaller displays */}
+        <div className="flex lg:hidden">
+          {menuOpen && (
+            <div className="bg-black w-full">
+              <div className="flex flex-col">
+                {components.map((component, index) => (
+                  <a
+                    href={component.href}
+                    key={index}
+                    className="text-white py-2 hover:text-primary text-lg"
+                  >
+                    {component.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Navigation menu for wider displays */}
+        <NavigationMenu className="hidden lg:flex">
+          <NavigationMenuList>
+            {components.map((component, index) => (
+              <NavigationMenuItem
+                key={index}
+                className={`${isBlackBackground ? 'text-white' : 'text-accent'}`}
+              >
+                <NavigationMenuLink
+                  className={navigationMenuTriggerStyle()}
                   href={component.href}
-                  key={index}
-                  className="text-white py-2 hover:text-primary text-lg"
                 >
                   {component.title}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
       </div>
-
-      {/* Navigation menu for wider displays */}
-      <NavigationMenu className="hidden lg:flex">
-        <NavigationMenuList>
-          {components.map((component, index) => (
-            <NavigationMenuItem key={index}>
-              <NavigationMenuLink
-                className={navigationMenuTriggerStyle()}
-                href={component.href}
-              >
-                {component.title}
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          ))}
-        </NavigationMenuList>
-      </NavigationMenu>
     </div>
   );
 }

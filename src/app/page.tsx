@@ -3,6 +3,7 @@ import { Header } from './components/header-menu';
 import Hero from './components/hero';
 import CTA from './components/cta';
 import HowItWorks from './components/how-it-works';
+import AlreadytUser from './components/already-user';
 
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
           <Hero />
         </div>
       </div>
-      <div className="relative z-10 top-16 md:top-96 sm:top-36 lg:top-44 sm:bg-yellow-400 md:bg-blue-500">
+      <div className="relative z-10 top-16 sm:top-36 md:top-96 lg:top-44">
         <CTA />
         <HowItWorks />
+        <AlreadytUser />
       </div>
     </main>
   );
