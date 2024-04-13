@@ -59,12 +59,13 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          border: "#891F25"
         },
         text: {
           primary: '#383838',
           secondary: '#ffffff',
           muted: '#FFFFFFB3',
-
+          title: "#1B1B1B"
         }
       },
       borderRadius: {

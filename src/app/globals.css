@@ -9,25 +9,43 @@
     /* Foreground color: Light gray */
     --foreground: 292.2 0% 71.5%;
 
+
+     /* #CF202D Primary color: Red */
+     --primary: 354 76% 47%;
+     /* Primary foreground color: Light red */
+     --primary-foreground: 358 68% 60%;
+
+
+    /* Secondary color: Light blue */
+    --secondary: 217 71% 30%;
+    /* Secondary foreground color: Dark gray */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+
     /* Card background color: White */
     --card: 0 0% 100%;
-    /* Card foreground color: dark gray */
-    --card-foreground: 222.2 84% 4.9%;
+    /* #D9D9D9*/
+    /* Card foreground color:  dark gray */
+    --card-foreground: 0 0% 85%;
+
+    /* Muted color: Light blue */
+    --muted: 210 40% 96.1%;
+    /* Muted foreground color: Moderate pink */
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    /* #1B1B1B*/
+    --text-title: 0 0% 10.6%;
+
+    
 
     /* Popover background color: White */
     --popover: 0 0% 100%;
     /* Popover foreground color: Light gray */
     --popover-foreground: 222.2 84% 4.9%;
-   /* #EB4D5D
-    /* Primary color: Red */
-    --primary: 350.88 67.76% 57.46%;
-    /* Primary foreground color: Light red */
-    --primary-foreground: 358 68% 60%;
 
-    /* Secondary color: Light blue */
-    --secondary: 210 40% 96.1%;
-    /* Secondary foreground color: Dark gray */
-    --secondary-foreground: 222.2 47.4% 11.2%;
+
+   
+
 
     /* Muted color: Light blue */
     --muted: 210 40% 96.1%;
@@ -84,7 +102,9 @@
     /* Primary foreground color: Dark gray */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    /* Secondary color: Dark blue */
+    /* 
+    #173F85
+    Secondary color: Dark blue */
     --secondary: 217.2 32.6% 17.5%;
     /* Secondary foreground color: Light blue */
     --secondary-foreground: 210 40% 98%;
