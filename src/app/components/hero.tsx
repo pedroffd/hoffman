@@ -31,14 +31,14 @@ const Hero = () => {
       </div>
 
       {/* Coluna do texto */}
-      <div className="lg:w-1/2 md:w-9/12 flex flex-col justify-start my-4 lg:mx-auto lg:ml-4 lg:mb-24">
+      <div className="lg:w-1/2 flex flex-col justify-start lg:mx-auto lg:ml-4 align-middle my-4 lg:my-0 xl:mb-32">
         <h1 className="text-6xl lg:text-5xl font-bold text-center lg:text-left lg:mb-3">
           <span className="text-primary">Medroster</span>
           <span className="text-white"> for offices</span>
         </h1>
 
-        <div className="text-white font-light text-xl justify-start text-justify lg:mb-3">
-          <p className="my-8 leading-7">
+        <div className="text-white font-light text-xl justify-start text-justify lg:mb-3 max-w-xl">
+          <p className="my-6 leading-7">
             Message colleagues and patients in real-time. Medroster has
             everything you need to get your office up and running in no time!
             Medroster enables medical offices and pharma to communicate
