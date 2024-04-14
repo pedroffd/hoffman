@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AlreadyUser = () => {
   return (
@@ -26,7 +27,7 @@ const AlreadyUser = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center sm:space-x-4">
-            <a
+            <Link
               href="https://itunes.apple.com/us/app/medroster/id1086724903"
               className="relative group text-white"
             >
@@ -44,9 +45,9 @@ const AlreadyUser = () => {
                   <p className="text-xl font-bold">APP STORE</p>
                 </div>
               </div>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="https://play.google.com/store/apps/details?id=com.medroster.patientdCVzdDox"
               className="relative group text-white"
             >
@@ -64,7 +65,7 @@ const AlreadyUser = () => {
                   <p className="text-xl font-bold">PLAY STORE</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
@@ -19,7 +20,7 @@ const components: { title: string; href: string }[] = [
   },
   {
     title: 'Terms',
-    href: '/docs/primitives/hover-card',
+    href: '/terms',
   },
   {
     title: 'Contact',
@@ -54,16 +55,12 @@ export function Header() {
   const isBlackBackground = scrollPosition > 50;
 
   return (
-    <div
+    <header
       className={`header z-20 sticky top-0  ${isBlackBackground ? 'bg-black' : 'bg-black lg:bg-transparent'}`}
     >
-      <div
-        className="container flex flex-col lg:flex-row py-3 max-w-6xl w-full 
-    lg:justify-between font-mono text-sm lg:flex
-     border-b-[0.4px] border-muted-foreground "
-      >
+      <div className="container flex flex-col lg:flex-row py-3 max-w-6xl w-full lg:justify-between font-mono text-sm lg:flex border-b-[0.4px] border-muted-foreground">
         <div className="flex items-center justify-between w-full lg:ml-auto">
-          <a
+          <Link
             className="flex items-center space-x-3 rtl:space-x-reverse md:ml-0"
             href="https://medroster.com/"
           >
@@ -73,7 +70,7 @@ export function Header() {
               height={34}
               width={225}
             />
-          </a>
+          </Link>
 
           {/* Menu icon for smaller displays */}
           <div
@@ -91,20 +88,20 @@ export function Header() {
             <div className="bg-black w-full">
               <div className="flex flex-col">
                 {components.map((component, index) => (
-                  <a
+                  <Link
                     href={component.href}
                     key={index}
                     className="text-white py-2 hover:text-primary text-lg"
                   >
                     {component.title}
-                  </a>
+                  </Link>
                 ))}
-                <a
+                <Link
                   href={'https://medroster.com/users/password/new'}
                   className="text-white py-2 hover:text-primary text-lg"
                 >
                   Login
-                </a>
+                </Link>
               </div>
             </div>
           )}
@@ -115,14 +112,14 @@ export function Header() {
           <NavigationMenuList>
             {components.map((component, index) => (
               <NavigationMenuItem key={index} className="text-white">
-                <NavigationMenuLink
-                  className={navigationMenuTriggerStyle()}
-                  href={component.href}
-                >
-                  {component.title}
-                </NavigationMenuLink>
+                <Link href={component.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {component.title}
+                  </NavigationMenuLink>
+                </Link>
               </NavigationMenuItem>
             ))}
+
             <NavigationMenuItem>
               <Button className="text-white w-24" size="sm">
                 Login
@@ -131,6 +128,6 @@ export function Header() {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-    </div>
+    </header>
   );
 }

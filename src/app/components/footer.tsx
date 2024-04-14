@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 const sitemap: { title: string; href: string }[] = [
@@ -24,7 +25,7 @@ const sitemap: { title: string; href: string }[] = [
 
 const Footer = () => {
   return (
-    <div className="container text-white max-w-7xl">
+    <footer className="container text-white max-w-6xl bg-secondary">
       <div className="space-x-8 flex flex-row my-16 items-center align-middle justify-between">
         <div className="flex flex-col text-xl font-light">
           <Image
@@ -51,9 +52,9 @@ const Footer = () => {
           <h4 className="text-xl font-bold my-2">Sitemap</h4>
           <div className="flex flex-col font-light">
             {sitemap.map((item, index) => (
-              <a href={item.href} key={index} className="my-1">
+              <Link href={item.href} key={index} className="my-1">
                 {item.title}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -64,13 +65,13 @@ const Footer = () => {
           Copyright Ⓒ 2024 Medroster Inc. All Rights Reserved.
         </p>
         <div className="text-end">
-          <a href="https://medroster.com/" className="mx-2">
+          <Link href="/terms" className="mx-2">
             Terms & Conditions
-          </a>
-          <a href="https://medroster.com/">Privacy Policy</a>
+          </Link>
+          <Link href="https://medroster.com/">Privacy Policy</Link>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
