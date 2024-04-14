@@ -4,10 +4,15 @@ import CardProductInfo from '@/components/ui/card-product-info';
 const HowItWorks = () => {
   return (
     <section className="flex flex-col py-4 px-2 items-center justify-center text-center container">
-      <p className="font-bold text-4xl text-text-primary my-6">How it works?</p>
-      <div className="flex flex-col md:flex-row flex-wrap justify-center">
+      <div className="border-b-[0.4px] border-muted-foreground my-8">
+        <h3 className="font-bold text-5xl text-white my-6 ">
+          How does it <span className="text-primary">work</span> ?
+        </h3>
+      </div>
+
+      <div className="flex flex-row flex-wrap justify-center">
         {homepageCards.map((card, index) => (
-          <CardProductInfo cardProps={card} key={index} />
+          <CardProductInfo cardProps={card} key={index} index={index} />
         ))}
       </div>
     </section>

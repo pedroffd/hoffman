@@ -10,6 +10,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { Button } from '@/components/ui/button';
 
 const components: { title: string; href: string }[] = [
   {
@@ -26,11 +27,7 @@ const components: { title: string; href: string }[] = [
   },
   {
     title: 'Partners',
-    href: '/docs/primitives/scroll-area',
-  },
-  {
-    title: 'Login',
-    href: '/docs/primitives/tabs',
+    href: '/docs/primitives/progress',
   },
 ];
 
@@ -58,11 +55,12 @@ export function Header() {
 
   return (
     <div
-      className={`header z-20 sticky top-0 ${isBlackBackground ? 'bg-black' : 'bg-black lg:bg-transparent'}`}
+      className={`header z-20 sticky top-0  ${isBlackBackground ? 'bg-black' : 'bg-black lg:bg-transparent'}`}
     >
       <div
-        className="container flex flex-col lg:flex-row py-3 max-w-5xl w-full 
-    lg:justify-between font-mono text-sm lg:flex"
+        className="container flex flex-col lg:flex-row py-3 max-w-6xl w-full 
+    lg:justify-between font-mono text-sm lg:flex
+     border-b-[0.4px] border-muted-foreground "
       >
         <div className="flex items-center justify-between w-full lg:ml-auto">
           <a
@@ -83,7 +81,6 @@ export function Header() {
         text-foreground p-1 border-foreground rounded-md w-12 justify-center 
         "
           >
-            {/*     {screenWidth} */}
             <Menu onClick={() => setMenuOpen(!menuOpen)} />
           </div>
         </div>
@@ -102,6 +99,12 @@ export function Header() {
                     {component.title}
                   </a>
                 ))}
+                <a
+                  href={'https://medroster.com/users/password/new'}
+                  className="text-white py-2 hover:text-primary text-lg"
+                >
+                  Login
+                </a>
               </div>
             </div>
           )}
@@ -111,10 +114,7 @@ export function Header() {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             {components.map((component, index) => (
-              <NavigationMenuItem
-                key={index}
-                className={`${isBlackBackground ? 'text-white' : 'text-accent'}`}
-              >
+              <NavigationMenuItem key={index} className="text-white">
                 <NavigationMenuLink
                   className={navigationMenuTriggerStyle()}
                   href={component.href}
@@ -123,6 +123,11 @@ export function Header() {
                 </NavigationMenuLink>
               </NavigationMenuItem>
             ))}
+            <NavigationMenuItem>
+              <Button className="text-white w-24" size="sm">
+                Login
+              </Button>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>

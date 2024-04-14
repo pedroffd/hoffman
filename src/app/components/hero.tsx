@@ -1,28 +1,64 @@
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+
 const Hero = () => {
   return (
-    <div className="z-10 flex flex-col mt-20 pt-2 container max-w-5xl">
-      <h1 className="text-2xl lg:text-4xl font-bold text-secondary sm:mr-32 sm:pr-50 md:mr-10 md:w-4/6 lg:w-7/12 leading-8 mb-6 pr-48 lg:mr-12 ">
-        Communicate Safely with Medroster
-      </h1>
-
-      <div className="text-text-muted font-light text-base w-7/12 sm:w-3/6 md:w-3/6 lg:w-2/6">
-        <p className="mb-6 mr-2">
-          Message colleagues and patients in real-time.{' '}
-        </p>
-        <p className="mb-6 l">
-          Medroster has everything you need to get your office up and running in
-          no time!
-        </p>
-        <p className="mb-6 ">
-          Medroster enables medical offices and pharma to communicate
-          efficiently with each other
-        </p>
+    <div className="flex flex-col lg:flex-row items-center z-10 max-w-7xl container lg:mx-auto mt-20 relative">
+      {/* Coluna da imagem */}
+      <div className="lg:w-1/2 relative">
+        <div className="relative inset-0 z-10">
+          <Image
+            src="/images/landing_computer.png"
+            alt="Medroster Landing"
+            placeholder="blur"
+            width={615}
+            height={615}
+            loading="lazy"
+            blurDataURL="data:/images/landing_computer.png"
+          />
+        </div>
+        <div className="absolute bottom-0 right-10 z-20">
+          <Image
+            src="/images/IphoneMockupMed1.png"
+            alt="Medroster Iphone"
+            placeholder="blur"
+            width={110}
+            height={227}
+            loading="lazy"
+            blurDataURL="data:/images/IphoneMockupMed1.png"
+          />
+        </div>
       </div>
 
-      <Button className="text-secondary w-44" size="lg">
-        SIGN ME UP
-      </Button>
+      {/* Coluna do texto */}
+      <div className="lg:w-1/2 flex flex-col justify-start lg:mx-auto lg:ml-4 align-middle my-4 lg:my-0 xl:mb-32">
+        <h1 className="text-6xl lg:text-5xl font-bold text-center lg:text-left lg:mb-3">
+          <span className="text-primary">Medroster</span>
+          <span className="text-white"> for offices</span>
+        </h1>
+
+        <div className="text-white font-light text-xl justify-start text-justify lg:mb-3 max-w-xl">
+          <p className="my-6 leading-7">
+            Message colleagues and patients in real-time. Medroster has
+            everything you need to get your office up and running in no time!
+            Medroster enables medical offices and pharma to communicate
+            efficiently with each other.
+          </p>
+        </div>
+
+        <div className="md:w-3/4 flex space-x-6 mx-auto md:mx-0">
+          <Button
+            className="text-white w-44 bg-transparent border border-primary h-12"
+            size="lg"
+            variant="outline"
+          >
+            How does it work?
+          </Button>
+          <Button className="text-white w-44 h-12" size="lg">
+            Sign me up
+          </Button>
+        </div>
+      </div>
     </div>
   );
 };
