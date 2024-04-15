@@ -30,3 +30,4 @@ export const homepageCards: ICard[] = [
         cardDescription: "Eliminating the need for inefficient phone calls and emails. Your staff and patients will thank you."
         },
 ]
+
