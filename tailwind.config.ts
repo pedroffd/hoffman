@@ -1,13 +1,13 @@
 import type { Config } from "tailwindcss"
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -24,7 +24,6 @@ const config = {
       },
       backgroundImage: {
         'landing-page': "url('/images/jumbotron.jpg')",
-        
       },
       colors: {
         border: "hsl(var(--border))",
@@ -44,7 +43,7 @@ const config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-         muted: {
+        muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         }, 
@@ -82,14 +81,24 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "accordion-right": {
+          from: { width: "0" },
+          to: { width: "var(--radix-accordion-content-width)" },
+        },
+        "accordion-left": {
+          from: { width: "var(--radix-accordion-content-width)" },
+          to: { width: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "accordion-right": "accordion-right 0.2s ease-out",
+        "accordion-left": "accordion-left 0.2s ease-out",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+}
 
 export default config
