@@ -16,7 +16,7 @@ import { Button } from '@/components/ui/button';
 const components: { title: string; href: string }[] = [
   {
     title: 'FAQ',
-    href: '/docs/primitives/alert-dialog',
+    href: '/faq',
   },
   {
     title: 'Terms',
