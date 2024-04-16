@@ -2,12 +2,10 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-/* TODO:
-LIST OF ITEMS WITH BULLET POINTS IN THE TERMS PAGE */
 const TermsOfUse = () => {
   return (
-    <div className=" max-w-6xl bg-muted relative mx-auto">
-      <div className="relative">
+    <div className="w-full bg-muted relative mx-auto">
+      <div className="relative mx-auto">
         <Image
           src="/images/tinted-jumbotron-3.jpg"
           alt="Terms of Use"
@@ -15,15 +13,21 @@ const TermsOfUse = () => {
           loading="lazy"
           height={304}
           width={1170}
+          layout="responsive" // Adiciona essa propriedade
           blurDataURL="data:/images/tinted-jumbotron-3.jpg"
+          className="w-full" // Adiciona essa classe
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">Terms of Service</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold text-white">
+            Terms of Service
+          </h1>
         </div>
       </div>
 
       <div className="text-justify text-text-title justify-center items-center max-w-4xl mx-auto container mt-8">
-        <h2 className="text-2xl font-semibold my-3">Terms of Agreement</h2>
+        <h2 className="text-2xl font-semibold my-4 text-center sm:text-start">
+          Terms of Agreement
+        </h2>
         <p className="font-light mb-4">
           (Last Reviewed on January 01, 2016) Welcome to the Medroster website,
           (the “Site”). The Site is a copyrighted work belonging to Medroster,
