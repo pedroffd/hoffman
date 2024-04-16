@@ -18,7 +18,7 @@ export interface FAQProps {
 
 const FAQ: React.FC<FAQProps> = ({ faqs }) => {
   return (
-    <div className="max-w-6xl relative mx-auto">
+    <div className="w-full bg-muted relative mx-auto">
       <div className="relative">
         <Image
           src="/images/tinted-jumbotron-3.jpg"
@@ -27,21 +27,23 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
           loading="lazy"
           height={304}
           width={1170}
+          layout="responsive"
           blurDataURL="data:/images/tinted-jumbotron-3.jpg"
+          className="w-full"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">
+          <h1 className="text-2xl sm:text-4xl font-bold text-white">
             Frequently Asked Questions
           </h1>
         </div>
       </div>
 
-      <div className="text-justify text-text-title justify-center items-center max-w-6xl">
-        <h2 className="text-2xl font-semibold my-3">
+      <div className="text-justify text-text-title justify-center items-center max-w-6xl mx-auto">
+        <h2 className="text-2xl font-semibold my-4 text-center sm:text-start">
           General FAQ's about using Medroster
         </h2>
         {faqs.map((faq, index) => (
-          <div key={index} className="my-8">
+          <div key={index} className="my-8 mx-2 lg:mx-0">
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>{faq.title}</AccordionTrigger>
