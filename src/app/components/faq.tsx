@@ -27,7 +27,6 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
           loading="lazy"
           height={304}
           width={1170}
-          layout="responsive"
           blurDataURL="data:/images/tinted-jumbotron-3.jpg"
           className="w-full"
         />
@@ -43,7 +42,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
           General FAQ's about using Medroster
         </h2>
         {faqs.map((faq, index) => (
-          <div key={index} className="my-8 mx-2 lg:mx-0">
+          <div key={index} className="my-8 mx-2">
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>{faq.title}</AccordionTrigger>
