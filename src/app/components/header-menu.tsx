@@ -24,7 +24,7 @@ const components: { title: string; href: string }[] = [
   },
   {
     title: 'Contact',
-    href: '/docs/primitives/progress',
+    href: '/contact',
   },
   {
     title: 'Partners',
@@ -69,6 +69,7 @@ export function Header() {
               alt="Medroster"
               height={34}
               width={225}
+              priority={false}
             />
           </Link>
 

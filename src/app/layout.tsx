@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={openSans.className}>
-      <body>
+      <body suppressHydrationWarning={true}>
         <main className="flex flex-col min-h-screen min-w-screen mx-auto bg-secondary">
           <Header /> {children} <Footer />
         </main>
