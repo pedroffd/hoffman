@@ -13,6 +13,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import { useToast } from '@/components/ui/use-toast';
 
 import { Mail } from 'lucide-react';
 
@@ -39,7 +40,7 @@ const ContactPage = () => {
       number: '',
     },
   });
-
+  const { toast } = useToast();
   const handleSubmit = async (data: ContactFormData) => {
     try {
       console.log(data); // Log the form data
@@ -165,7 +166,15 @@ const ContactPage = () => {
                 />
               </div>
               <div className="flex justify-center md:justify-end pr-4 my-4">
-                <Button type="submit" className="text-white w-44 sm:w-64">
+                <Button
+                  type="submit"
+                  className="text-white w-44 sm:w-64"
+                  onClick={() => {
+                    toast({
+                      description: 'Your message was sent',
+                    });
+                  }}
+                >
                   Talk to us
                 </Button>
               </div>
