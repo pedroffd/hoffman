@@ -30,7 +30,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Coluna do texto */}
       <div className="lg:w-1/2 flex flex-col justify-start lg:mx-auto lg:ml-4 align-middle my-4 lg:my-0 xl:mb-32">
         <h1 className="text-6xl lg:text-5xl font-bold text-center lg:text-left lg:mb-3">
           <span className="text-primary">Medroster</span>

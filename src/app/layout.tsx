@@ -3,6 +3,7 @@ import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import { Header } from './components/header-menu';
 import Footer from './components/footer';
+import { Toaster } from '@/components/ui/toaster';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({
         <main className="flex flex-col min-h-screen min-w-screen mx-auto bg-secondary">
           <Header /> {children} <Footer />
         </main>
+        <Toaster />
       </body>
     </html>
   );
