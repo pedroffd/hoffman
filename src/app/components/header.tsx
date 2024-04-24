@@ -38,7 +38,7 @@ const components: { title: string; href: string }[] = [
   },
   {
     title: 'Partners',
-    href: '/docs/primitives/progress',
+    href: '/partners',
   },
 ];
 

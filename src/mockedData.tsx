@@ -1,6 +1,7 @@
 import { ICard } from './components/ui/card-product-info';
 import { FAQItem } from './app/components/faq';
 import { TermsItem } from './app/components/terms';
+import { IHero } from './app/components/hero';
 
 export const homepageCards: ICard[] = [
   {
@@ -757,5 +758,18 @@ export const FAQItemList: FAQItem[] = [
         </p>
       </>
     ),
+  },
+];
+
+export const HeroItemList: IHero[] = [
+  {
+    title: ' for offices',
+    content:
+      ' Message colleagues and patients in real-time. Medroster has everything you need to get your office up and running in no time! Medroster enables medical offices and pharma to communicate efficiently with each other.',
+  },
+  {
+    title: ' for PARTNERS',
+    content:
+      'Be a valued Medical Office Partner. Message Medical offices and physicians in real time. Medroster enables pharma, medical device companies to communicate efficiently with medical offices and physicians',
   },
 ];
