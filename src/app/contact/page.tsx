@@ -59,7 +59,7 @@ const ContactPage = () => {
 
       <div className="flex justify-center container max-w-6xl relative -top-8 mb-8">
         <div className="bg-background text-text-title justify-center items-center max-w-5xl rounded-lg w-full px-4 z-10">
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-row justify-between items-center text-center align-middle  mx-0 sm:mx-16 md:mx-16 lg:mx-36">
             <h4 className="text-2xl font-base text-left align-middle my-auto text-primary">
               {/* bg-yellow-400 sm:bg-red-500 md:bg-green-500 lg:bg-purple-500 xl:bg-pink-500 */}
               Send us a message

@@ -1,10 +1,18 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
-const Hero = () => {
+export interface IHero {
+  title: string;
+  content: string;
+}
+
+interface IHeroProps {
+  heroProps: IHero;
+}
+
+const Hero: React.FC<IHeroProps> = ({ heroProps }) => {
   return (
     <div className="flex flex-col lg:flex-row items-center z-10 max-w-7xl container lg:mx-auto mt-20 relative">
-      {/* Coluna da imagem */}
       <div className="lg:w-1/2 relative">
         <div className="relative inset-0 z-10">
           <Image
@@ -33,16 +41,11 @@ const Hero = () => {
       <div className="lg:w-1/2 flex flex-col justify-start lg:mx-auto lg:ml-4 align-middle my-4 lg:my-0 xl:mb-32">
         <h1 className="text-6xl lg:text-5xl font-bold text-center lg:text-left lg:mb-3">
           <span className="text-primary">Medroster</span>
-          <span className="text-white"> for offices</span>
+          <span className="text-white">{heroProps.title}</span>
         </h1>
 
         <div className="text-white font-light text-xl justify-start text-justify lg:mb-3 max-w-xl">
-          <p className="my-6 leading-7">
-            Message colleagues and patients in real-time. Medroster has
-            everything you need to get your office up and running in no time!
-            Medroster enables medical offices and pharma to communicate
-            efficiently with each other.
-          </p>
+          <p className="my-6 leading-7">{heroProps.content}</p>
         </div>
 
         <div className="md:w-3/4 flex space-x-6 mx-auto md:mx-0">
