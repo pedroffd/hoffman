@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   Dialog,
   DialogContent,
@@ -57,20 +58,15 @@ export function LoginForm() {
             </div>
           </div>
           <DialogFooter className="flex justify-between items-end">
-            <Button
-              className="text-white w-24"
-              size="sm"
-              type="submit"
-              onClick={handleLogin}
-            >
+            <Button className="text-white w-24" size="sm" type="submit">
               Login
             </Button>
-            <button
+            <Link
+              href={'https://staging.medroster.com/users/password/new'}
               className="text-primary py-2 hover:text-primary text-lg hover:underline-offset-2 underline"
-              onClick={closeDialog}
             >
-              Cancel
-            </button>
+              Forgot Password?
+            </Link>
           </DialogFooter>
         </DialogContent>
       </Dialog>

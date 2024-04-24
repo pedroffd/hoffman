@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { SignUpDialog } from '@/app/components/sign-up-dialog';
 
 const sitemap: { title: string; href: string }[] = [
   {
@@ -14,12 +15,12 @@ const sitemap: { title: string; href: string }[] = [
 
   {
     title: 'About',
-    href: '/docs/primitives/alert-dialog',
+    href: '/',
   },
 
   {
     title: 'FAQ',
-    href: '/docs/primitives/alert-dialog',
+    href: '/faq',
   },
 ];
 
@@ -43,9 +44,7 @@ const Footer = () => {
             One of a kind. A real-time HIPAA compliant messaging platform for
             staff and patients.
           </p>
-          <Button className="text-white w-44 my-3" size="lg">
-            Sign me up
-          </Button>
+          <SignUpDialog />
         </div>
 
         <div className="flex flex-col text-end">
@@ -68,7 +67,7 @@ const Footer = () => {
           <Link href="/terms" className="mx-2">
             Terms & Conditions
           </Link>
-          <Link href="https://medroster.com/">Privacy Policy</Link>
+          <Link href="/terms">Privacy Policy</Link>
         </div>
       </div>
     </footer>

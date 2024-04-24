@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { SignUpDialog } from '@/app/components/sign-up-dialog';
 
 export interface IHero {
   title: string;
@@ -56,9 +57,7 @@ const Hero: React.FC<IHeroProps> = ({ heroProps }) => {
           >
             How does it work?
           </Button>
-          <Button className="text-white w-44 h-12" size="lg">
-            Sign me up
-          </Button>
+          <SignUpDialog />
         </div>
       </div>
     </div>

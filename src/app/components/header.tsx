@@ -106,12 +106,7 @@ export function Header() {
                       {component.title}
                     </Link>
                   ))}
-                  <Link
-                    href={'https://medroster.com/users/password/new'}
-                    className="text-white py-2 hover:text-primary text-lg"
-                  >
-                    Login
-                  </Link>
+                  <LoginForm />
                 </div>
               </div>
             )}
