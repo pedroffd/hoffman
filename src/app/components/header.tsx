@@ -22,6 +22,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
+import { LoginForm } from '@/app/components/login-form';
 
 const components: { title: string; href: string }[] = [
   {
@@ -74,7 +75,7 @@ export function Header() {
           <div className="flex items-center justify-between w-full lg:ml-auto">
             <Link
               className="flex items-center space-x-3 rtl:space-x-reverse md:ml-0"
-              href="https://medroster.com/"
+              href="/"
             >
               <Image
                 src="/medrosterlogo.png"
@@ -86,11 +87,7 @@ export function Header() {
             </Link>
 
             {/* Menu icon for smaller displays */}
-            <div
-              className="flex lg:hidden items-center border hover:cursor-pointer 
-        text-foreground p-1 border-foreground rounded-md w-12 justify-center 
-        "
-            >
+            <div className="flex lg:hidden items-center border hover:cursor-pointer text-foreground p-1 border-foreground rounded-md w-12 justify-center">
               <Menu onClick={() => setMenuOpen(!menuOpen)} />
             </div>
           </div>
@@ -139,53 +136,7 @@ export function Header() {
               ))}
 
               <NavigationMenuItem>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button className="text-white w-24" size="sm">
-                      Login
-                    </Button>
-                  </DialogTrigger>
-                  <DialogContent className="w-96 sm:w-full sm:max-w-[425px] ">
-                    <DialogHeader>
-                      <DialogTitle className="text-primary text-2xl my-4 font-normal">
-                        Login to Medroster
-                      </DialogTitle>
-                    </DialogHeader>
-                    <div className="flex flex-col gap-4 py-4">
-                      <div className=" items-center gap-4">
-                        <Input
-                          id="name"
-                          placeholder="Email"
-                          className="col-span-3 text-text-primary"
-                        />
-                      </div>
-                      <div className="items-center gap-4">
-                        <Input
-                          id="username"
-                          placeholder="Password"
-                          className="col-span-3 text-text-primary"
-                        />
-                      </div>
-                    </div>
-                    <DialogFooter className="flex justify-between items-end">
-                      <Button
-                        className="text-white w-24"
-                        size="sm"
-                        type="submit"
-                      >
-                        Login
-                      </Button>
-                      <Link
-                        href={
-                          'https://staging.medroster.com/users/password/new'
-                        }
-                        className="text-primary py-2 hover:text-primary text-lg hover:underline-offset-2 underline"
-                      >
-                        Forgot Password?
-                      </Link>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
+                <LoginForm />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
