@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -51,29 +50,17 @@ const ContactPage = () => {
 
   return (
     <div className="w-full bg-muted relative mx-auto">
-      <div className="relative">
-        <Image
-          src="/images/tinted-jumbotron-2.jpg"
-          alt="Contact page"
-          placeholder="blur"
-          loading="lazy"
-          height={250}
-          width={1170}
-          blurDataURL="data:/images/tinted-jumbotron-2.jpg"
-          className="w-full"
-        />
-
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-2xl sm:text-4xl font-bold text-white">
-            Contact Us
-          </h1>
-        </div>
+      <div className="h-56 md:h-80 bg-secondary inset-0 flex items-center justify-center">
+        <h1 className="text-2xl sm:text-4xl font-bold text-white">
+          Contact Us
+        </h1>
       </div>
 
-      <div className="flex justify-center container max-w-6xl relative sm:-top-16 md:-top-24 xl:-top-36 mb-8">
-        <div className="bg-background text-text-title justify-center items-center max-w-4xl sm:rounded-lg lg:rounded-l-lg w-full lg:w-5/6 px-4 z-10">
+      <div className="flex justify-center container max-w-6xl relative -top-8 mb-8">
+        <div className="bg-background text-text-title justify-center items-center max-w-5xl rounded-lg w-full px-4 z-10">
           <div className="flex flex-row justify-between">
-            <h4 className="text-2xl font-semibold text-left align-middle my-auto text-primary">
+            <h4 className="text-2xl font-base text-left align-middle my-auto text-primary">
+              {/* bg-yellow-400 sm:bg-red-500 md:bg-green-500 lg:bg-purple-500 xl:bg-pink-500 */}
               Send us a message
             </h4>
             <Mail className="text-3xl my-8 text-foreground" size={48} />
@@ -185,8 +172,6 @@ const ContactPage = () => {
             </form>
           </Form>
         </div>
-
-        <div className="hidden lg:flex bg-text-primary h-screen w-2/6 rounded-r-lg"></div>
       </div>
     </div>
   );

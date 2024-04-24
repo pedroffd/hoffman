@@ -112,7 +112,10 @@ export function Header() {
         <NavigationMenu className="hidden lg:flex">
           <NavigationMenuList>
             {components.map((component, index) => (
-              <NavigationMenuItem key={index} className="text-white">
+              <NavigationMenuItem
+                key={index}
+                className="text-white hover:text-primary"
+              >
                 <Link href={component.href} legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     {component.title}

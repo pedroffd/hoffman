@@ -19,26 +19,14 @@ export interface FAQProps {
 const FAQ: React.FC<FAQProps> = ({ faqs }) => {
   return (
     <div className="w-full bg-muted relative mx-auto">
-      <div className="relative">
-        <Image
-          src="/images/tinted-jumbotron-3.jpg"
-          alt="Terms of Use"
-          placeholder="blur"
-          loading="lazy"
-          height={304}
-          width={1170}
-          blurDataURL="data:/images/tinted-jumbotron-3.jpg"
-          className="w-full"
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-2xl sm:text-4xl font-bold text-white">
-            Frequently Asked Questions
-          </h1>
-        </div>
+      <div className="inset-0 flex items-center justify-center h-56 md:h-80 bg-secondary">
+        <h1 className="text-2xl sm:text-4xl font-bold text-white">
+          Frequently Asked Questions
+        </h1>
       </div>
 
       <div className="text-justify text-text-title justify-center items-center max-w-6xl mx-auto">
-        <h2 className="text-2xl font-semibold my-4 text-center sm:text-start">
+        <h2 className="text-2xl font-semibold my-4 text-center sm:text-start mx-4">
           General FAQ's about using Medroster
         </h2>
         {faqs.map((faq, index) => (
