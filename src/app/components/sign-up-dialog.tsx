@@ -1,3 +1,5 @@
+'use client';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -27,7 +29,7 @@ export function SignUpDialog() {
         </DialogHeader>
         <div className="flex flex-row gap-4 py-4">
           <Button className="text-white w-44" size="sm" type="submit">
-            DOCTOR/STAFF
+            <Link href="/sign-up">DOCTOR/STAFF</Link>
           </Button>
           <Button className="text-white w-44" size="sm" type="submit">
             PHARMA
