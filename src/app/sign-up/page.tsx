@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -20,6 +21,7 @@ const contactSchema = z.object({
   first_name: z.string(),
   last_name: z.string(),
   email: z.string().email(),
+  password: z.string().email(),
   subject: z.string(),
   message: z.string().min(2, {
     message: 'Message content cannot be empty',
@@ -41,6 +43,7 @@ const SignUpPage = () => {
       phone_number: '',
       npi: '',
       last_name: '',
+      password: '',
     },
   });
   const { toast } = useToast();
@@ -105,6 +108,26 @@ const SignUpPage = () => {
                   </FormItem>
                 )}
               />
+              <ButtonGroup />
+              <FilterCombobox placeholder="Specialty" options={specialties} />
+              <FilterCombobox placeholder="Title" options={titles} />
+              <FormField
+                control={form.control}
+                name="npi"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        id="npi"
+                        className=" w-80 sm:w-64 md:w-80"
+                        placeholder="NPI #"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               <FormField
                 control={form.control}
                 name="email"
@@ -116,6 +139,26 @@ const SignUpPage = () => {
                         type="email"
                         className=" w-80 sm:w-64 md:w-80"
                         placeholder="Email"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <p className="text-text-primary">
+                Please choose a password that is at least 8 characters.
+              </p>
+              <FormField
+                control={form.control}
+                name="password"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        id="password"
+                        className="w-80 sm:w-64 md:w-80"
+                        placeholder="Password"
                         {...field}
                       />
                     </FormControl>
@@ -140,41 +183,29 @@ const SignUpPage = () => {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="npi"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input
-                        id="npi"
-                        className=" w-80 sm:w-64 md:w-80"
-                        placeholder="NPI #"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FilterCombobox placeholder="Specialty" options={specialties} />
-              <FilterCombobox placeholder="Title" options={titles} />
-              <ButtonGroup />
+
               <div className="flex justify-center md:justify-end pr-4 my-4">
                 <Button
                   type="submit"
                   className="text-white w-44 sm:w-64"
+                  variant="secondary"
                   onClick={() => {
                     toast({
                       description: 'Your message was sent',
                     });
                   }}
                 >
-                  Talk to us
+                  Continue
                 </Button>
               </div>
             </form>
           </Form>
+          <div>
+            <p>or if you're a vendor</p>
+            <Link href="https://staging.medroster.com/sign-up?type=Partner">
+              go to Vendor registration
+            </Link>
+          </div>
         </div>
       </div>
     </div>

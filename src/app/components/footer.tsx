@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { SignUpDialog } from '@/app/components/sign-up-dialog';
 
 const sitemap: { title: string; href: string }[] = [
