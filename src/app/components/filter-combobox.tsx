@@ -26,10 +26,10 @@ export default function FilterCombobox({
 
   return (
     <Combobox value={selected} onChange={setSelected}>
-      <div className="relative mt-1 border rounded-md">
-        <div className="relative w-full cursor-default overflow-hidden rounded-lg bg-white text-left shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+      <div className="relative mt-1 rounded-lg shadow-md w-80">
+        <div className="relative w-full cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm overflow-hidden  bg-white text-left shadow-sm">
           <Combobox.Input
-            className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+            className="w-full border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0 border rounded-md"
             placeholder={placeholder}
             onChange={(event) => setQuery(event.target.value)}
           />
