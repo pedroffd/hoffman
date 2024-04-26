@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { SignUpDialog } from '@/app/components/sign-up-dialog';
 
 const sitemap: { title: string; href: string }[] = [
@@ -63,7 +62,7 @@ const Footer = () => {
         <p className="text-start">
           Copyright Ⓒ 2024 Medroster Inc. All Rights Reserved.
         </p>
-        <div className="text-end">
+        <div className="flex text-end">
           <Link href="/terms" className="mx-2">
             Terms & Conditions
           </Link>
