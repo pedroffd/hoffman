@@ -1,4 +1,5 @@
 'use client';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -22,10 +23,11 @@ const contactSchema = z
   .object({
     first_name: z.string(),
     last_name: z.string(),
+    type: z.string().optional(),
     email: z.string().email(),
     confirmEmail: z.string().email().min(1, { message: 'Required' }),
     password: z.string().min(1, {
-      message: 'Please choose a password that is at least 8 characters!',
+      message: 'Required',
     }),
     confirmPassword: z.string().min(1, { message: 'Required' }),
     subject: z.string(),
@@ -43,6 +45,7 @@ const contactSchema = z
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const SignUpPage = () => {
+  const [selectedType, setSelectedType] = useState('doctor');
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -50,6 +53,7 @@ const SignUpPage = () => {
       email: '',
       subject: '',
       message: '',
+      type: selectedType,
       phone_number: '',
       npi: '',
       last_name: '',
@@ -58,7 +62,14 @@ const SignUpPage = () => {
       confirmEmail: '',
     },
   });
+
   const { toast } = useToast();
+
+  const handleTypeChange = (type: string) => {
+    setSelectedType(type);
+    form.setValue('type', type); // Update form value for type
+  };
+
   const handleSubmit = async (data: ContactFormData) => {
     try {
       console.log(data); // Log the form data
@@ -71,7 +82,6 @@ const SignUpPage = () => {
     <div className="bg-background text-text-title justify-center items-center max-w-3xl rounded-lg w-full px-4 z-10 my-6 shadow-lg container">
       <div className="flex flex-row items-center text-center align-middle mx-auto justify-center">
         <h4 className="text-2xl font-base  align-middle  text-text-primary my-8 border-b border-solid-2 border-primary">
-          {/* bg-yellow-400 sm:bg-red-500 md:bg-green-500 lg:bg-purple-500 xl:bg-pink-500 */}
           Doctor/Staff Registration
         </h4>
       </div>
@@ -81,7 +91,7 @@ const SignUpPage = () => {
           className="flex flex-col gap-4 text-foreground 2 items-center"
           onSubmit={form.handleSubmit(handleSubmit)}
         >
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <FormField
               control={form.control}
               name="first_name"
@@ -117,7 +127,7 @@ const SignUpPage = () => {
               )}
             />
           </div>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <FormField
               control={form.control}
               name="email"
@@ -156,7 +166,7 @@ const SignUpPage = () => {
               )}
             />
           </div>
-          <div className="flex flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <FormField
               control={form.control}
               name="password"
@@ -192,26 +202,34 @@ const SignUpPage = () => {
               )}
             />
           </div>
-          <ButtonGroup />
-          <FilterCombobox placeholder="Specialty" options={specialties} />
-          <FilterCombobox placeholder="Title" options={titles} />
-          <FormField
-            control={form.control}
-            name="npi"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input
-                    id="npi"
-                    className=" w-80 sm:w-64 md:w-80"
-                    placeholder="NPI #"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+          <ButtonGroup
+            selectedType={selectedType}
+            onChange={handleTypeChange}
           />
+
+          {selectedType === 'doctor' && ( // Render these fields only if type is 'doctor'
+            <>
+              <FilterCombobox placeholder="Specialty" options={specialties} />
+              <FilterCombobox placeholder="Title" options={titles} />
+              <FormField
+                control={form.control}
+                name="npi"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        id="npi"
+                        className=" w-80 sm:w-64 md:w-80"
+                        placeholder="NPI #"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </>
+          )}
 
           <FormField
             control={form.control}

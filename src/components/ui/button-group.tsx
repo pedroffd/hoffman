@@ -1,37 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
-const ButtonGroup = () => {
-  const [selectedButton, setSelectedButton] = useState<string | null>(null);
+type ButtonGroupProps = {
+  selectedType: string;
+  onChange: (type: string) => void;
+};
 
-  const handleClick = (button: string) => {
-    setSelectedButton(button);
+const ButtonGroup: React.FC<ButtonGroupProps> = ({
+  selectedType,
+  onChange,
+}) => {
+  const handleClick = (type: string) => {
+    onChange(type);
   };
 
   return (
-    <div className="flex gap-4 w-full mx-auto text-white items-center justify-center">
+    <div className="flex gap-4 w-80 sm:w-full mx-auto text-white items-center justify-center">
       <Button
+        type="button"
         className={`text-white w-44 relative ${
-          selectedButton === 'DOCTOR' ? 'bg-secondary' : 'bg-accent'
+          selectedType === 'doctor' ? 'bg-secondary' : 'bg-accent'
         }`}
         variant="secondary"
-        onClick={() => handleClick('DOCTOR')}
+        onClick={() => handleClick('doctor')}
       >
         <span className="mr-2">DOCTOR</span>
-        {selectedButton === 'DOCTOR' && (
+        {selectedType === 'doctor' && (
           <Check className="h-5 w-5 absolute top-1/2 right-2 transform -translate-y-1/2 text-green-500" />
         )}
       </Button>
       <Button
+        type="button"
         className={`text-white w-44 relative ${
-          selectedButton === 'STAFF' ? 'bg-secondary' : 'bg-accent'
+          selectedType === 'staff' ? 'bg-secondary' : 'bg-accent'
         }`}
         variant="secondary"
-        onClick={() => handleClick('STAFF')}
+        onClick={() => handleClick('staff')}
       >
         <span className="mr-2">STAFF</span>
-        {selectedButton === 'STAFF' && (
+        {selectedType === 'staff' && (
           <Check className="h-5 w-5 absolute top-1/2 right-2 transform -translate-y-1/2 text-green-500" />
         )}
       </Button>
