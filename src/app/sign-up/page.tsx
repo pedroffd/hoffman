@@ -38,7 +38,7 @@ const signupSchema = z
     path: ['confirmPassword'],
   });
 
-type ContactFormData = z.infer<typeof signupSchema>;
+type SignUPFormData = z.infer<typeof signupSchema>;
 
 const SignUpPage = () => {
   const [selectedType, setSelectedType] = useState('doctor');
@@ -64,7 +64,7 @@ const SignUpPage = () => {
     form.setValue('type', type); // Update form value for type
   };
 
-  const handleSubmit = async (data: ContactFormData) => {
+  const handleSubmit = async (data: SignUPFormData) => {
     try {
       console.log(data); // Log the form data
     } catch (error) {
