@@ -17,24 +17,25 @@ const Hero: React.FC<IHeroProps> = ({ heroProps }) => {
       <div className="lg:w-1/2 relative">
         <div className="relative inset-0 z-10">
           <Image
-            src="/images/landing_computer.png"
+            src="/images/landscape.jpg"
             alt={`${APP_NAME} Landing`}
             placeholder="blur"
             width={615}
             height={615}
             loading="lazy"
-            blurDataURL="data:/images/landing_computer.png"
+            blurDataURL="data:/images/landscape.jpg"
           />
         </div>
         <div className="absolute bottom-0 right-10 z-20">
           <Image
-            src="/images/IphoneMockupMed1.png"
+            src="/images/portrait.jpg"
             alt={`${APP_NAME} iPhone`}
             placeholder="blur"
             width={110}
             height={227}
             loading="lazy"
-            blurDataURL="data:/images/IphoneMockupMed1.png"
+            blurDataURL="data:/images/portrait.jpg"
+            className="rounded-md"
           />
         </div>
       </div>

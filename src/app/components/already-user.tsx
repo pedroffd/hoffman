@@ -9,11 +9,11 @@ const AlreadyUser = () => {
         {/* Column with the iPhone image */}
         <div className="mb-8 md:mb-0 md:mr-8 text-center">
           <Image
-            src="/images/IphoneMockupMed2.png"
+            src="/images/portrait.jpg"
             alt="iPhone"
             height={402}
             width={195}
-            className="mx-auto" // Adicionando classe para centralizar horizontalmente
+            className="mx-auto rounded-md"
           />
         </div>
 
