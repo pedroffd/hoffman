@@ -13,7 +13,7 @@ const AlreadyUser = () => {
             alt="iPhone"
             height={402}
             width={195}
-            className="mx-auto rounded-md"
+            className="rounded-md mx-auto"
           />
         </div>
 
