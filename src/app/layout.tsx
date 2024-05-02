@@ -4,6 +4,7 @@ import './globals.css';
 import { Header } from './components/header';
 import Footer from './components/footer';
 import { Toaster } from '@/components/ui/toaster';
+import { APP_NAME } from '@/utils/config';
 
 const openSans = Open_Sans({
   subsets: ['latin'],
@@ -12,7 +13,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Medroster',
+  title: APP_NAME,
   description: 'HIPAA Compliant Chat',
 };
 

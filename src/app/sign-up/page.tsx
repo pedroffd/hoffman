@@ -259,10 +259,7 @@ const SignUpPage = () => {
       </Form>
       <div className="flex flex-col gap-2 justify-center items-center my-4">
         <p>or if you're a vendor</p>
-        <Link
-          className="text-secondary hover:underline"
-          href="https://staging.medroster.com/sign-up?type=Partner"
-        >
+        <Link className="text-secondary hover:underline" href="google.com">
           go to Vendor registration
         </Link>
       </div>

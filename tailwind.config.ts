@@ -22,9 +22,7 @@ const config: Config = {
         sans: ['var(--font-sans)'],
         mono: ['var(--font-roboto-mono)'],
       },
-      backgroundImage: {
-        'landing-page': "url('/images/jumbotron.jpg')",
-      },
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

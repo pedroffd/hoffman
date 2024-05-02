@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { SignUpDialog } from '@/app/components/sign-up-dialog';
+import { APP_NAME } from '@/utils/config';
 
 const sitemap: { title: string; href: string }[] = [
   {
@@ -28,13 +29,16 @@ const Footer = () => {
     <footer className="container text-white max-w-6xl bg-secondary">
       <div className="space-x-8 flex flex-row my-16 items-center align-middle justify-between">
         <div className="flex flex-col text-xl font-light">
-          <Image
+          <div className="bg-primary w-32 h-10 items-center align-middle text-center flex">
+            <span className=" mx-auto text-2xl text-white">Logo</span>
+          </div>
+          {/*  <Image
             src="/images/whitelogo.png"
-            alt="Medroster"
+            alt={APP_NAME}
             height={59}
             width={295}
             className="my-3"
-          />
+          /> */}
           <p className="my-3">
             Everywhere, Anywhere. Now compatible on all major platforms
             including iOS and Android.
@@ -60,7 +64,7 @@ const Footer = () => {
 
       <div className="mb-4 flex justify-between align-middle text-sm font-light">
         <p className="text-start">
-          Copyright Ⓒ 2024 Medroster Inc. All Rights Reserved.
+          {`Copyright Ⓒ 2024 ${APP_NAME} Inc. All Rights Reserved.`}
         </p>
         <div className="flex text-end">
           <Link href="/terms" className="mx-2">

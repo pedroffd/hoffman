@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { APP_NAME } from '@/utils/config';
 
 export function SignUpDialog() {
   return (
@@ -21,7 +22,7 @@ export function SignUpDialog() {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-primary text-2xl my-2 font-normal">
-            Signup to Medroster
+            {`Signup to ${APP_NAME}`}
           </DialogTitle>
           <DialogDescription>
             Please, select the best option for you:

@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+//import Image from 'next/image';
 import Link from 'next/link';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
@@ -12,6 +12,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { LoginForm } from '@/app/components/login-form';
+//import { APP_NAME } from '@/utils/config';
 
 const components: { title: string; href: string }[] = [
   {
@@ -66,13 +67,16 @@ export function Header() {
               className="flex items-center space-x-3 rtl:space-x-reverse md:ml-0"
               href="/"
             >
-              <Image
-                src="/medrosterlogo.png"
-                alt="Medroster"
+              <div className="bg-primary w-32 h-10 items-center align-middle text-center flex">
+                <span className=" mx-auto text-2xl text-white">Logo</span>
+              </div>
+              {/*  <Image
+                src="/hoffman.png"
+                alt={APP_NAME}
                 height={34}
                 width={225}
                 priority={false}
-              />
+              /> */}
             </Link>
 
             {/* Menu icon for smaller displays */}
