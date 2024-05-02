@@ -19,7 +19,7 @@ import { specialties, titles } from '@/mockedData';
 import ButtonGroup from '@/components/ui/button-group';
 import { PasswordInput } from '../components/password-input';
 
-const contactSchema = z
+const signupSchema = z
   .object({
     first_name: z.string(),
     last_name: z.string(),
@@ -30,10 +30,6 @@ const contactSchema = z
       message: 'Required',
     }),
     confirmPassword: z.string().min(1, { message: 'Required' }),
-    subject: z.string(),
-    message: z.string().min(2, {
-      message: 'Message content cannot be empty',
-    }),
     phone_number: z.string(),
     npi: z.string(),
   })
@@ -42,17 +38,15 @@ const contactSchema = z
     path: ['confirmPassword'],
   });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+type ContactFormData = z.infer<typeof signupSchema>;
 
 const SignUpPage = () => {
   const [selectedType, setSelectedType] = useState('doctor');
-  const form = useForm<z.infer<typeof contactSchema>>({
-    resolver: zodResolver(contactSchema),
+  const form = useForm<z.infer<typeof signupSchema>>({
+    resolver: zodResolver(signupSchema),
     defaultValues: {
       first_name: '',
       email: '',
-      subject: '',
-      message: '',
       type: selectedType,
       phone_number: '',
       npi: '',
