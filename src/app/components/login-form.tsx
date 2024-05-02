@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { APP_NAME } from '@/utils/config';
 
 export function LoginForm() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ export function LoginForm() {
         <DialogContent className="w-96 sm:w-full sm:max-w-[425px] ">
           <DialogHeader>
             <DialogTitle className="text-primary text-2xl my-4 font-normal">
-              Login to Medroster
+              {`Login to ${APP_NAME}`}
             </DialogTitle>
           </DialogHeader>
           <div className="flex flex-col gap-4 py-4">
@@ -62,7 +63,7 @@ export function LoginForm() {
               Login
             </Button>
             <Link
-              href={'https://staging.medroster.com/users/password/new'}
+              href="google.com"
               className="text-primary py-2 hover:text-primary text-lg hover:underline-offset-2 underline"
             >
               Forgot Password?

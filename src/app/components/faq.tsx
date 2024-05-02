@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-
+import { APP_NAME } from '@/utils/config';
 export interface FAQItem {
   title: string;
   content: JSX.Element;
@@ -14,7 +14,7 @@ export interface FAQItem {
 export interface FAQProps {
   faqs: FAQItem[];
 }
-
+const FAQTitle = `General FAQ's about using ${APP_NAME}`;
 const FAQ: React.FC<FAQProps> = ({ faqs }) => {
   return (
     <div className="w-full bg-muted relative mx-auto">
@@ -26,7 +26,7 @@ const FAQ: React.FC<FAQProps> = ({ faqs }) => {
 
       <div className="text-justify text-text-title justify-center items-center max-w-6xl mx-auto">
         <h2 className="text-2xl font-semibold my-4 text-center sm:text-start mx-4">
-          General FAQ's about using Medroster
+          {FAQTitle}
         </h2>
         {faqs.map((faq, index) => (
           <div key={index} className="my-8 mx-2">

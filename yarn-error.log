@@ -28,7 +28,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "medroster",
+    "name": "hoffman",
     "version": "0.1.0",
     "private": true,
     "scripts": {

@@ -38,8 +38,8 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 ## Details of psql
- - username: postgres
- - password: Pedro@123
-- database: medroster
+
+- username: postgres
+- password: Pedro@123
+- database: hoffman

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { SignUpDialog } from '@/app/components/sign-up-dialog';
-
+import { APP_NAME } from '@/utils/config';
 export interface IHero {
   title: string;
   content: string;
@@ -18,7 +18,7 @@ const Hero: React.FC<IHeroProps> = ({ heroProps }) => {
         <div className="relative inset-0 z-10">
           <Image
             src="/images/landing_computer.png"
-            alt="Medroster Landing"
+            alt={`${APP_NAME} Landing`}
             placeholder="blur"
             width={615}
             height={615}
@@ -29,7 +29,7 @@ const Hero: React.FC<IHeroProps> = ({ heroProps }) => {
         <div className="absolute bottom-0 right-10 z-20">
           <Image
             src="/images/IphoneMockupMed1.png"
-            alt="Medroster Iphone"
+            alt={`${APP_NAME} iPhone`}
             placeholder="blur"
             width={110}
             height={227}
@@ -41,7 +41,7 @@ const Hero: React.FC<IHeroProps> = ({ heroProps }) => {
 
       <div className="lg:w-1/2 flex flex-col justify-start lg:mx-auto lg:ml-4 align-middle my-4 lg:my-0 xl:mb-32">
         <h1 className="text-6xl lg:text-5xl font-bold text-center lg:text-left lg:mb-3">
-          <span className="text-primary">Medroster</span>
+          <span className="text-primary">{APP_NAME}</span>
           <span className="text-white">{heroProps.title}</span>
         </h1>
 

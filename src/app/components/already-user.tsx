@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { APP_NAME } from '@/utils/config';
 
 const AlreadyUser = () => {
   return (
@@ -19,7 +20,7 @@ const AlreadyUser = () => {
         {/* Column with text content */}
         <div className="text-center md:text-start md:w-6/12">
           <h3 className="text-6xl font-bold text-primary">
-            Already a <span className="text-text-title">Medroster</span> user?
+            Already a <span className="text-text-title">{APP_NAME}</span> user?
           </h3>
 
           <p className="text-xl text-text-title my-4">
@@ -27,10 +28,7 @@ const AlreadyUser = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center md:justify-start items-center sm:space-x-4">
-            <Link
-              href="https://itunes.apple.com/us/app/medroster/id1086724903"
-              className="relative group text-white"
-            >
+            <Link href="google.com" className="relative group text-white">
               <div className="flex items-center space-x-2 bg-black rounded-lg py-2 px-4 w-52 h-16 my-1">
                 <div>
                   <Image
@@ -47,10 +45,7 @@ const AlreadyUser = () => {
               </div>
             </Link>
 
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.medroster.patientdCVzdDox"
-              className="relative group text-white"
-            >
+            <Link href="google.com" className="relative group text-white">
               <div className="flex items-center space-x-2 bg-black rounded-lg py-2 px-4 w-52 h-16 my-1">
                 <div>
                   <Image
